@@ -1,707 +1,837 @@
-<!DOCTYPE html>
+html_v6 = """<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bella Berratta | Official Hub & Design Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-<style>
-@font-face {
-font-family: 'TimelessEditorialScript';
-src: local('Snell Roundhand'), local('SnellRoundhand-Regular'), local('Edwardian Script ITC');
-}
-:root {
---satin-pink-bg: #EAC5D8;
---satin-pink-light: #FDF6FA;
---satin-pink-mid: #F4DCEB;
---glass-pink-edge: #C982A8;
---glass-pink-deep: #964E75;
---obsidian: #0B090A;
---white: #FFFFFF;
-}
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-rendering: optimizeLegibility;
-}
-body {
-background-color: var(--white);
-color: var(--obsidian);
-font-family: 'Montserrat', sans-serif;
-text-align: center;
-overflow-x: hidden;
-}
-.svg-defs {
-position: absolute;
-width: 0;
-height: 0;
-overflow: hidden;
-}
-@keyframes lightSweep {
-0% { left: -120%; }
-40%, 100% { left: 140%; }
-}
-.editorial-pink-glass-script {
-font-family: 'TimelessEditorialScript', 'Pinyon Script', cursive;
-font-weight: 400;
-display: inline-block;
-color: #F4C4DC;
-background: linear-gradient(
-180deg,
-#FFFFFF 0%,
-#FCEBF4 22%,
-#E89BC4 47%,
-#FFFFFF 53%,
-#DA82B0 74%,
-#FCEBF4 92%
-);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-text-shadow:
-0px 1px 0px rgba(173, 91, 134, 0.45),
-0px 2px 0px rgba(138, 63, 102, 0.35),
-0px 6px 14px rgba(184, 102, 145, 0.28);
-padding: 4px 10px;
-letter-spacing: 0.01em;
-}
-.editorial-pink-glass-script-dark {
-font-family: 'TimelessEditorialScript', 'Pinyon Script', cursive;
-font-weight: 400;
-display: inline-block;
-color: #FCEBF4;
-background: linear-gradient(
-180deg,
-#FFFFFF 0%,
-#FDEFF7 25%,
-#F2B5D5 48%,
-#FFFFFF 55%,
-#E28FB9 80%,
-#FFFFFF 100%
-);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-text-shadow:
-0px 1.5px 0px rgba(166, 81, 126, 0.55),
-0px 4px 16px rgba(244, 184, 216, 0.45);
-padding: 4px 10px;
-}
-.pink-pack-serif {
-font-family: 'Cormorant Garamond', serif;
-font-weight: 400;
-background: linear-gradient(
-180deg,
-#FFFFFF 0%,
-#FADCEB 28%,
-#E498C0 52%,
-#FFFFFF 60%,
-#C7749F 95%
-);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-text-shadow:
-0px 1px 0px rgba(156, 75, 117, 0.45),
-0px 4px 10px rgba(184, 102, 145, 0.25);
-}
-.top-bar {
-background: linear-gradient(90deg, #F2D2E3 0%, #FDF4F9 50%, #F2D2E3 100%);
-font-size: 0.66rem;
-font-weight: 500;
-letter-spacing: 0.25em;
-padding: 11px 12px;
-text-transform: uppercase;
-color: #4A2337;
-border-bottom: 1px solid #E5B8D0;
-}
-header {
-padding: 34px 20px 22px;
-background: radial-gradient(circle at 50% 0%, #F9E5F0 0%, #FDF8FB 60%, var(--white) 100%);
-}
-.crest-wrap {
-display: inline-block;
-margin-bottom: 8px;
-position: relative;
-}
-.crest-svg {
-width: 72px;
-height: 92px;
-overflow: visible;
-filter: drop-shadow(0px 6px 14px rgba(175, 96, 138, 0.28));
-}
-.brand-title {
-font-size: 4rem;
-line-height: 1.06;
-display: block;
-}
-.brand-sub {
-font-family: 'Cormorant Garamond', serif;
-font-size: 0.84rem;
-font-weight: 600;
-letter-spacing: 0.34em;
-text-transform: uppercase;
-margin-top: 4px;
-color: #63394F;
-}
-.hero {
-max-width: 500px;
-margin: 12px auto 0;
-padding: 0 18px;
-}
-.hero-img-frame {
-width: 100%;
-height: 440px;
-border-radius: 12px;
-padding: 3px;
-background: linear-gradient(135deg, #FCEBF4 0%, #C982A8 35%, #FFFFFF 68%, #DF9EC0 100%);
-box-shadow: 0 14px 32px rgba(168, 88, 130, 0.25);
-position: relative;
-}
-.hero-inner {
-width: 100%;
-height: 100%;
-border-radius: 9px;
-overflow: hidden;
-position: relative;
-background: var(--obsidian);
-}
-.hero-inner img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-.hero-inner::after {
-content: "";
-position: absolute;
-inset: 0;
-background: linear-gradient(180deg, transparent 50%, rgba(11, 9, 10, 0.65) 100%);
-pointer-events: none;
-}
-.hero-overlay-text {
-position: absolute;
-bottom: 22px;
-left: 0;
-right: 0;
-z-index: 2;
-}
-.hero-overlay-text .script-top {
-font-size: 3.25rem;
-display: block;
-margin-bottom: -14px;
-}
-.hero-overlay-text .serif-bottom {
-font-family: 'Cormorant Garamond', serif;
-font-size: 2.1rem;
-font-weight: 400;
-letter-spacing: 0.22em;
-text-transform: uppercase;
-color: var(--white);
-text-shadow: 0 2px 12px rgba(0,0,0,0.65);
-}
-.social-strip {
-background: linear-gradient(180deg, #FDF4F9 0%, #F2D2E3 100%);
-padding: 28px 12px;
-margin-top: 28px;
-border-top: 1px solid #E8BED5;
-border-bottom: 1px solid #E8BED5;
-}
-.circle-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 10px;
-max-width: 460px;
-margin: 0 auto;
-}
-.social-circle {
-text-decoration: none;
-color: var(--obsidian);
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.circle-thumb {
-width: 70px;
-height: 70px;
-border-radius: 50%;
-background: radial-gradient(circle at 30% 25%, #2A1922 0%, #0B090A 80%);
-border: 2px solid #FFFFFF;
-outline: 1.5px solid #D48EB3;
-box-shadow:
-0 6px 16px rgba(155, 85, 122, 0.32),
-inset 0 2px 8px rgba(255, 225, 240, 0.28);
-margin-bottom: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: transform 0.25s ease;
-}
-.circle-thumb span {
-font-size: 1.15rem;
-letter-spacing: 0.08em;
-}
-.social-circle:hover .circle-thumb {
-transform: translateY(-3px) scale(1.04);
-}
-.social-circle-label {
-font-family: 'Cormorant Garamond', serif;
-font-size: 0.85rem;
-font-weight: 600;
-letter-spacing: 0.06em;
-color: #381B2B;
-}
-.about-section {
-background: var(--obsidian);
-color: var(--white);
-padding: 52px 24px;
-position: relative;
-}
-.about-inner {
-max-width: 500px;
-margin: 0 auto;
-}
-.about-header {
-font-size: 1.95rem;
-letter-spacing: 0.24em;
-text-transform: uppercase;
-margin-bottom: 16px;
-}
-.about-text {
-font-size: 0.86rem;
-line-height: 1.85;
-font-weight: 300;
-color: #F2E9EE;
-margin-bottom: 16px;
-}
-.overlap-title {
-position: relative;
-margin-bottom: 26px;
-padding: 0 6px;
-}
-.overlap-title .bg-bold {
-font-family: 'Cormorant Garamond', serif;
-font-weight: 300;
-font-size: 2.25rem;
-color: #EAD0DF;
-text-transform: uppercase;
-letter-spacing: 0.14em;
-line-height: 1;
-}
-.overlap-title .fg-script {
-font-size: clamp(2.05rem, 7.4vw, 2.65rem);
-margin-top: -18px;
-display: block;
-white-space: nowrap;
-}
-.links-section {
-max-width: 520px;
-margin: 44px auto;
-padding: 0 18px;
-}
-.link-card {
-display: block;
-text-decoration: none;
-background: linear-gradient(180deg, #FFFFFF 0%, #F9E5F0 48%, #EFC7DC 100%);
-border: 1.5px solid #D99BBB;
-border-radius: 10px;
-padding: 22px 18px;
-margin-bottom: 14px;
-box-shadow:
-0 6px 18px rgba(175, 96, 138, 0.18),
-inset 0 2px 0px #FFFFFF;
-position: relative;
-overflow: hidden;
-transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.link-card::after {
-content: "";
-position: absolute;
-top: 0;
-left: -120%;
-width: 45%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent);
-transform: skewX(-25deg);
-animation: lightSweep 5.5s infinite;
-}
-.link-card:hover {
-transform: translateY(-2px);
-box-shadow: 0 10px 24px rgba(175, 96, 138, 0.3);
-}
-.link-card-title {
-font-family: 'Cormorant Garamond', serif;
-font-size: 1.28rem;
-font-weight: 600;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: #210F19;
-display: block;
-}
-.link-card-sub {
-font-size: 0.65rem;
-font-weight: 600;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: #7A3E5D;
-margin-top: 9px;
-display: inline-block;
-background: var(--white);
-border: 1px solid #DF9EC0;
-padding: 6px 18px;
-border-radius: 30px;
-box-shadow: 0 2px 6px rgba(184, 107, 147, 0.15);
-}
-.playboy-section {
-max-width: 520px;
-margin: 48px auto;
-padding: 0 18px;
-}
-.playboy-card {
-background: radial-gradient(circle at top, #2B1622 0%, var(--obsidian) 75%);
-border: 2px solid #DF9EC0;
-border-radius: 12px;
-padding: 38px 22px;
-color: var(--white);
-box-shadow:
-0 14px 32px rgba(11, 9, 10, 0.28),
-inset 0 0 24px rgba(244, 210, 228, 0.14);
-position: relative;
-overflow: hidden;
-}
-.playboy-badge {
-display: inline-block;
-font-size: 0.65rem;
-letter-spacing: 0.25em;
-text-transform: uppercase;
-background: linear-gradient(180deg, #FFFFFF 0%, #F7DFEC 55%, #E39EC1 100%);
-color: #2E1120;
-padding: 6px 16px;
-border-radius: 20px;
-font-weight: 600;
-margin-bottom: 12px;
-box-shadow: 0 2px 10px rgba(243, 214, 230, 0.35);
-}
-.playboy-title-serif {
-font-family: 'Cormorant Garamond', serif;
-font-size: 1.95rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(--white);
-display: block;
-margin-top: -8px;
-margin-bottom: 12px;
-}
-.playboy-desc {
-font-size: 0.82rem;
-line-height: 1.75;
-color: #EADCE3;
-font-weight: 300;
-margin-bottom: 22px;
-}
-.glossy-btn {
-display: inline-block;
-text-decoration: none;
-background: linear-gradient(180deg, #FFFFFF 0%, #F8E2EE 48%, #E49CC0 100%);
-border: 1px solid #FFFFFF;
-color: #260E1A;
-font-size: 0.74rem;
-font-weight: 600;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-padding: 14px 30px;
-border-radius: 30px;
-box-shadow:
-0 4px 18px rgba(235, 196, 216, 0.45),
-inset 0 2px 0px #FFFFFF;
-transition: transform 0.2s ease;
-}
-.glossy-btn:hover {
-transform: scale(1.04);
-}
-.design-section {
-background: radial-gradient(circle at center, #FDF6FA 0%, #F4D8E8 55%, var(--white) 100%);
-padding: 48px 18px;
-margin: 20px auto;
-}
-.design-inner {
-max-width: 540px;
-margin: 0 auto;
-}
-.design-intro {
-font-size: 0.84rem;
-color: #4E3140;
-line-height: 1.7;
-margin-bottom: 24px;
-}
-.services-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 12px;
-margin-bottom: 26px;
-}
-.service-box {
-background: var(--white);
-border: 1.5px solid #DF9EC0;
-border-radius: 10px;
-padding: 22px 14px;
-box-shadow:
-0 8px 20px rgba(184, 107, 147, 0.15),
-inset 0 2px 0px #FFFFFF;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-}
-.service-num-svg {
-width: 64px;
-height: 44px;
-margin: 0 auto 6px;
-display: block;
-overflow: visible;
-}
-.service-name {
-font-family: 'Cormorant Garamond', serif;
-font-size: 1.08rem;
-font-weight: 600;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: #210F19;
-margin-bottom: 6px;
-}
-.service-detail {
-font-size: 0.73rem;
-line-height: 1.55;
-color: #5C3F4E;
-}
-.portfolio-cta {
-display: inline-block;
-text-decoration: none;
-background: var(--obsidian);
-color: #FCEBF4;
-border: 1.5px solid #DF9EC0;
-font-size: 0.74rem;
-font-weight: 500;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-padding: 15px 30px;
-border-radius: 30px;
-box-shadow: 0 6px 18px rgba(11, 9, 10, 0.2);
-transition: all 0.25s ease;
-}
-.gallery-section {
-max-width: 540px;
-margin: 45px auto 55px;
-padding: 0 18px;
-}
-.gallery-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 12px;
-margin-top: 16px;
-}
-.gallery-item {
-aspect-ratio: 3 / 4;
-padding: 3px;
-background: linear-gradient(135deg, #FCEBF4, #C982A8, #FFFFFF, #DF9EC0);
-border-radius: 10px;
-overflow: hidden;
-box-shadow: 0 8px 20px rgba(175, 96, 138, 0.22);
-}
-.gallery-item img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-border-radius: 7px;
-display: block;
-}
-footer {
-background: linear-gradient(90deg, #F2D2E3 0%, #FDF4F9 50%, #F2D2E3 100%);
-padding: 28px 20px;
-font-size: 0.68rem;
-font-weight: 500;
-letter-spacing: 0.22em;
-text-transform: uppercase;
-color: #4A2337;
-border-top: 1px solid #DF9EC0;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Berratta | Official Website & Branding Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink-primary: #ffd4f3;     /* (255, 212, 243) */
+      --pink-secondary: #ffe6f8;   /* (255, 230, 248) */
+      --pink-frost: #fff4fa;       /* (255, 244, 250) */
+      --cool-grey: #999999;        /* (153, 153, 153) */
+      --cool-grey-dark: #666265;
+      --white: #ffffff;
+
+      /* Reference 20: Exact Glossy Icy Pink-Gold Swatch */
+      --icy-pink-gold: linear-gradient(
+        90deg,
+        #f2d7e6 0%,
+        #ffe6f8 25%,
+        #ffffff 50%,
+        #ffd4f3 75%,
+        #edd0e2 100%
+      );
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--cool-grey-dark);
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    @keyframes shimmerSweep {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ==========================================================================
+       IOS WEBKIT FIX: PURE 3D PINK GLASS TEXT (NO GREY SHADOW BLEED)
+       Uses a separate ::before shadow layer so the gradient fill stays 100% bright pink
+       ========================================================================== */
+    .pink-3d-script {
+      font-family: 'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', cursive;
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff4fa 18%,
+        #ffd4f3 46%,
+        #ffffff 54%,
+        #f2aee0 78%,
+        #ffe6f8 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* filter: drop-shadow applies AFTER background-clip in iOS Safari so it never muddies the fill */
+      filter:
+        drop-shadow(0px 1.2px 0px #c98eb9)
+        drop-shadow(0px 2.4px 0px #999999)
+        drop-shadow(0px 5px 10px rgba(255, 212, 243, 0.75));
+      padding: 4px 10px;
+    }
+
+    .pink-3d-serif {
+      font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', Georgia, serif;
+      font-weight: 300;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffe6f8 25%,
+        #ffd4f3 50%,
+        #ffffff 60%,
+        #e8a9d7 88%,
+        #c98eb9 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter:
+        drop-shadow(0px 1px 0px #b886a9)
+        drop-shadow(0px 2px 0px #999999)
+        drop-shadow(0px 4px 8px rgba(255, 212, 243, 0.65));
+    }
+
+    /* Reference 2 ("soft lash essentials") Bold Pink Pill Text */
+    .ref2-bold-pink {
+      font-family: 'Montserrat', -apple-system, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-transform: lowercase;
+      background: linear-gradient(
+        180deg,
+        #fff4fa 0%,
+        #ffd4f3 45%,
+        #f5b8e5 75%,
+        #ffe6f8 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter:
+        drop-shadow(0px 1.5px 0px #d49bc6)
+        drop-shadow(0px 3px 8px rgba(255, 212, 243, 0.7));
+      display: block;
+    }
+
+    /* ==========================================================================
+       1. TOP ANNOUNCEMENT BAR & CLEAN MINIMAL NAV (No Duplicate Logo)
+       ========================================================================== */
+    .announcement-bar {
+      background: var(--icy-pink-gold);
+      background-size: 200% auto;
+      animation: shimmerSweep 8s ease infinite;
+      color: var(--cool-grey-dark);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--pink-primary);
+    }
+
+    .nav-strip {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--pink-secondary);
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-strip a {
+      text-decoration: none;
+      color: var(--cool-grey);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       2. ANGEL FACED LOGO SUITE BANNER (Reference 1 Exact Match)
+       ========================================================================== */
+    .logo-banner {
+      background: radial-gradient(circle at 50% 30%, var(--pink-frost) 0%, var(--pink-secondary) 55%, var(--pink-primary) 100%);
+      padding: 36px 20px 32px;
+      border-bottom: 1px solid var(--pink-primary);
+    }
+
+    .submark-oval {
+      width: 66px;
+      height: 86px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 25%, #ffffff 0%, var(--pink-frost) 45%, var(--pink-primary) 100%);
+      border: 1.5px solid #ffffff;
+      box-shadow:
+        0 0 0 3px var(--pink-secondary),
+        0 0 0 4px #ffffff,
+        0 6px 16px rgba(153, 153, 153, 0.22);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .halo-ring {
+      width: 18px;
+      height: 4px;
+      border: 1.2px solid #ffffff;
+      border-radius: 50%;
+      margin-bottom: -4px;
+      box-shadow: 0 1px 2px rgba(153, 153, 153, 0.3);
+    }
+
+    .brand-main-script {
+      font-size: clamp(3.4rem, 11.5vw, 4.7rem);
+      line-height: 0.95;
+      display: block;
+    }
+
+    .brand-main-serif {
+      font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', Georgia, serif;
+      font-size: clamp(1.35rem, 4.5vw, 1.85rem);
+      font-weight: 300;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--white);
+      filter: drop-shadow(0px 1px 2px rgba(153, 153, 153, 0.55));
+      margin-top: -4px;
+      display: block;
+    }
+
+    .brand-tagline {
+      font-size: 0.55rem;
+      font-weight: 500;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--cool-grey);
+      margin-top: 8px;
+    }
+
+    /* ==========================================================================
+       3. REFERENCE 2 HERO ("soft lash essentials" Cursive ON TOP of Bold Pink)
+       ========================================================================== */
+    .hero-section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 28px 18px 12px;
+      background: var(--white);
+    }
+
+    .ref2-lockup {
+      position: relative;
+      margin: 0 auto 14px;
+    }
+
+    .ref2-lockup .script-top {
+      font-size: clamp(2.6rem, 9.5vw, 3.8rem);
+      line-height: 1;
+      display: block;
+      margin-bottom: -16px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .ref2-lockup .bold-bottom {
+      font-size: clamp(2.5rem, 9.2vw, 3.7rem);
+      line-height: 0.95;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-desc {
+      font-size: 0.7rem;
+      color: var(--cool-grey);
+      line-height: 1.65;
+      max-width: 400px;
+      margin: 10px auto 16px;
+    }
+
+    .icy-gold-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--icy-pink-gold);
+      background-size: 200% auto;
+      animation: shimmerSweep 6s ease infinite;
+      color: var(--cool-grey-dark);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 11px 28px;
+      border-radius: 30px;
+      border: 1px solid rgba(153, 153, 153, 0.3);
+      box-shadow:
+        0 4px 14px rgba(255, 212, 243, 0.65),
+        inset 0 1.5px 0px #ffffff;
+    }
+
+    /* Hero Portrait Frame with Built-In Glam Backdrop so it never shows a broken box */
+    .hero-photo-frame {
+      margin-top: 20px;
+      width: 100%;
+      height: 320px;
+      border-radius: 6px;
+      padding: 3px;
+      background: var(--icy-pink-gold);
+      box-shadow: 0 10px 26px rgba(255, 212, 243, 0.5);
+    }
+
+    .hero-photo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      background: radial-gradient(circle at 50% 35%, var(--pink-frost) 0%, var(--pink-secondary) 50%, var(--pink-primary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    /* ==========================================================================
+       4. 3-ACROSS SQUARE GRADIENT TILES (Reference 2 "liquids | tweezers | trays")
+       ========================================================================== */
+    .tiles-section {
+      max-width: 680px;
+      margin: 14px auto 0;
+      padding: 0 18px;
+    }
+
+    .tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .square-tile {
+      aspect-ratio: 1 / 1.05;
+      background: radial-gradient(circle at 50% 25%, var(--pink-frost) 0%, var(--pink-secondary) 48%, var(--pink-primary) 100%);
+      border: 1px solid rgba(153, 153, 153, 0.22);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 6px;
+      text-decoration: none;
+      box-shadow:
+        0 6px 14px rgba(255, 212, 243, 0.4),
+        inset 0 1.5px 0px #ffffff;
+    }
+
+    .square-tile-title {
+      font-family: 'Montserrat', -apple-system, sans-serif;
+      font-size: clamp(0.95rem, 3.6vw, 1.35rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+      color: var(--white);
+      filter: drop-shadow(0px 1.5px 2px rgba(153, 153, 153, 0.45));
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .square-tile-btn {
+      background: var(--white);
+      color: var(--cool-grey-dark);
+      font-size: 0.48rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(153, 153, 153, 0.22);
+    }
+
+    /* ==========================================================================
+       5. 4-ACROSS CIRCULAR SOCIAL MEDALLIONS (3D Pink Glass Pack Letters)
+       ========================================================================== */
+    .circles-bar {
+      background: linear-gradient(180deg, var(--pink-frost) 0%, var(--pink-secondary) 100%);
+      margin-top: 26px;
+      padding: 24px 14px;
+      border-top: 1px solid var(--pink-primary);
+      border-bottom: 1px solid var(--pink-primary);
+    }
+
+    .circles-grid {
+      max-width: 480px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .circle-link {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .circle-disc {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, #ffffff 0%, var(--pink-secondary) 45%, var(--pink-primary) 100%);
+      border: 2px solid var(--white);
+      box-shadow:
+        0 0 0 1px rgba(153, 153, 153, 0.3),
+        0 6px 14px rgba(255, 212, 243, 0.65),
+        inset 0 2px 5px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+
+    .circle-letters {
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .circle-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cool-grey-dark);
+      letter-spacing: 0.06em;
+    }
+
+    /* ==========================================================================
+       6. TIMELESS EDITORIAL OVERLAPPING HEADER (Reference 16 Exact Structure)
+       Tall thin serif on top + flowing cursive overlapping the baseline
+       ========================================================================== */
+    .timeless-header {
+      margin: 0 auto 14px;
+      position: relative;
+    }
+
+    .timeless-serif-top {
+      font-size: clamp(2.5rem, 9vw, 3.6rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      display: block;
+    }
+
+    .timeless-script-bottom {
+      font-size: clamp(2.4rem, 8.5vw, 3.4rem);
+      line-height: 0.95;
+      margin-top: -14px;
+      display: block;
+    }
+
+    /* ==========================================================================
+       7. ABOUT MYSELF SECTION
+       ========================================================================== */
+    .about-box-wrap {
+      max-width: 640px;
+      margin: 34px auto;
+      padding: 0 18px;
+    }
+
+    .about-card {
+      background: linear-gradient(135deg, var(--pink-frost) 0%, var(--white) 50%, var(--pink-secondary) 100%);
+      border: 1px solid var(--pink-primary);
+      border-radius: 6px;
+      padding: 34px 22px;
+      box-shadow:
+        0 10px 26px rgba(255, 212, 243, 0.45),
+        inset 0 0 0 3px var(--white);
+    }
+
+    .about-copy {
+      font-size: 0.78rem;
+      line-height: 1.85;
+      color: var(--cool-grey-dark);
+      max-width: 460px;
+      margin: 10px auto 14px;
+    }
+
+    /* ==========================================================================
+       8. DESIGN STUDIO PODIUM CARDS (Reference 3 Podiums + Reference 14 Numbers)
+       ========================================================================== */
+    .studio-wrap {
+      max-width: 680px;
+      margin: 36px auto;
+      padding: 0 18px;
+    }
+
+    .podium-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .podium-item {
+      background: linear-gradient(180deg, var(--pink-frost) 0%, var(--pink-secondary) 60%, var(--pink-primary) 100%);
+      border: 1px solid rgba(153, 153, 153, 0.25);
+      border-radius: 5px;
+      padding: 18px 12px 16px;
+      box-shadow:
+        0 6px 16px rgba(255, 212, 243, 0.4),
+        inset 0 1.5px 0px #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .podium-tag {
+      font-size: 0.48rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--cool-grey);
+      margin-bottom: 2px;
+    }
+
+    .podium-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cool-grey-dark);
+      margin-bottom: 8px;
+    }
+
+    .podium-display {
+      width: 100%;
+      height: 96px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .podium-number {
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: -6px;
+      z-index: 2;
+    }
+
+    .podium-base {
+      width: 82%;
+      height: 24px;
+      border-radius: 50% / 35%;
+      background: var(--icy-pink-gold);
+      border-top: 2px solid #ffffff;
+      border-bottom: 1.5px solid rgba(153, 153, 153, 0.35);
+      box-shadow: 0 5px 10px rgba(153, 153, 153, 0.2);
+    }
+
+    .podium-text {
+      font-size: 0.66rem;
+      line-height: 1.5;
+      color: var(--cool-grey-dark);
+      margin-bottom: 12px;
+    }
+
+    /* ==========================================================================
+       9. PLAYBOY CREATOR SECTION (Reference 2 "products too good to gatekeep")
+       ========================================================================== */
+    .playboy-wrap {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+
+    .playboy-panel {
+      background: radial-gradient(circle at 50% 0%, var(--pink-frost) 0%, var(--white) 60%, var(--pink-secondary) 100%);
+      border: 1.5px solid var(--pink-primary);
+      border-radius: 6px;
+      padding: 32px 20px;
+      box-shadow: 0 10px 26px rgba(255, 212, 243, 0.45);
+    }
+
+    /* ==========================================================================
+       10. LOOKBOOK 2x2 GALLERY
+       ========================================================================== */
+    .lookbook-wrap {
+      max-width: 680px;
+      margin: 38px auto 50px;
+      padding: 0 18px;
+    }
+
+    .lookbook-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .lookbook-card {
+      aspect-ratio: 3 / 4;
+      padding: 3px;
+      background: var(--icy-pink-gold);
+      border: 1px solid rgba(153, 153, 153, 0.25);
+      border-radius: 5px;
+      box-shadow: 0 6px 18px rgba(255, 212, 243, 0.45);
+      overflow: hidden;
+    }
+
+    .lookbook-card-inner {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, var(--pink-frost) 0%, var(--pink-primary) 100%);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .lookbook-card-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      background: radial-gradient(circle at top, var(--pink-frost) 0%, var(--pink-secondary) 60%, var(--pink-primary) 100%);
+      padding: 32px 20px;
+      border-top: 1px solid var(--pink-primary);
+    }
+
+    .footer-copy {
+      font-size: 0.58rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--cool-grey);
+      margin-top: 4px;
+    }
+  </style>
 </head>
 <body>
-<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient id="pinkGlassFill" x1="0%" y1="0%" x2="0%" y2="100%">
-<stop offset="0%" stop-color="#FFFFFF" />
-<stop offset="22%" stop-color="#FCEBF4" />
-<stop offset="48%" stop-color="#E598C0" />
-<stop offset="56%" stop-color="#FFFFFF" />
-<stop offset="82%" stop-color="#C973A0" />
-<stop offset="100%" stop-color="#9E4F78" />
-</linearGradient>
-<linearGradient id="crestBg" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#FFFFFF" />
-<stop offset="45%" stop-color="#F9E4F0" />
-<stop offset="100%" stop-color="#E2A4C4" />
-</linearGradient>
-<filter id="crispBevel" x="-20%" y="-20%" width="140%" height="140%">
-<feDropShadow dx="0" dy="1.2" stdDeviation="0" flood-color="#9A4D76" flood-opacity="0.75" />
-<feDropShadow dx="0" dy="3.5" stdDeviation="2.5" flood-color="#B86B93" flood-opacity="0.32" />
-</filter>
-</defs>
-</svg>
-<div class="top-bar">Welcome to the Official World of Bella Berratta</div>
-<header>
-<div class="crest-wrap">
-<svg class="crest-svg" viewBox="0 0 80 104" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="40" cy="52" rx="35" ry="47" fill="url(#crestBg)" stroke="#C982A8" stroke-width="1.5" />
-<ellipse cx="40" cy="52" rx="30.5" ry="42.5" fill="none" stroke="#FFFFFF" stroke-width="1.2" />
-<ellipse cx="40" cy="52" rx="28.5" ry="40.5" fill="none" stroke="#D48EB3" stroke-width="0.9" />
-<ellipse cx="40" cy="27" rx="9" ry="2.2" fill="none" stroke="#FFFFFF" stroke-width="1.1" />
-<text x="40" y="64" text-anchor="middle" font-family="'TimelessEditorialScript', 'Pinyon Script', cursive" font-size="33" fill="url(#pinkGlassFill)" filter="url(#crispBevel)">BB</text>
-</svg>
-</div>
-<h1 class="brand-title editorial-pink-glass-script">Bella Berratta</h1>
-<p class="brand-sub">Glamour • Exclusives • Custom Branding</p>
-</header>
-<section class="hero">
-<div class="hero-img-frame">
-<div class="hero-inner">
-<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2400&q=95" alt="Bella Berratta" />
-<div class="hero-overlay-text">
-<span class="script-top editorial-pink-glass-script-dark">The Official</span>
-<span class="serif-bottom">Bella Hub</span>
-</div>
-</div>
-</div>
-</section>
-<section class="social-strip">
-<div class="circle-grid">
-<a href="#instagram" class="social-circle">
-<div class="circle-thumb"><span class="pink-pack-serif">IG</span></div>
-<span class="social-circle-label">Instagram</span>
-</a>
-<a href="#telegram" class="social-circle">
-<div class="circle-thumb"><span class="pink-pack-serif">TG</span></div>
-<span class="social-circle-label">Telegram</span>
-</a>
-<a href="#tiktok" class="social-circle">
-<div class="circle-thumb"><span class="pink-pack-serif">TT</span></div>
-<span class="social-circle-label">TikTok</span>
-</a>
-<a href="#vip" class="social-circle">
-<div class="circle-thumb"><span class="pink-pack-serif">VIP</span></div>
-<span class="social-circle-label">Exclusives</span>
-</a>
-</div>
-</section>
-<section class="about-section">
-<div class="about-inner">
-<h2 class="about-header pink-pack-serif">Hey Babe!</h2>
-<p class="about-text">
-I’m Bella Berratta—curating soft luxury, high-glam aesthetics, and main-character energy.
-Whether you’re here to connect with me on my socials, apply for Playboy under my wing, or book custom digital branding & website design, everything you need is right here.
-</p>
-<div class="editorial-pink-glass-script-dark" style="font-size: 2.7rem;">xo, Bella</div>
-</div>
-</section>
-<section class="links-section">
-<div class="overlap-title">
-<div class="bg-bold">Connect With Me</div>
-<span class="fg-script editorial-pink-glass-script">links too good to gatekeep</span>
-</div>
-<a href="#" class="link-card">
-<span class="link-card-title">Join My Telegram Channel</span>
-<span class="link-card-sub">Click Here</span>
-</a>
-<a href="#" class="link-card">
-<span class="link-card-title">Message Me Directly</span>
-<span class="link-card-sub">I'm Online</span>
-</a>
-<a href="#" class="link-card">
-<span class="link-card-title">VIP Access & Exclusives</span>
-<span class="link-card-sub">Explore Now</span>
-</a>
-<a href="#" class="link-card">
-<span class="link-card-title">My Reviews & Vouch Channel</span>
-<span class="link-card-sub">View Proof</span>
-</a>
-</section>
-<section class="playboy-section">
-<div class="playboy-card">
-<span class="playboy-badge">Creator Opportunity</span>
-<div>
-<span class="editorial-pink-glass-script-dark" style="font-size: 2.85rem;">Become a</span>
-<span class="playboy-title-serif">Playboy Model</span>
-</div>
-<p class="playboy-desc">
-Ready to monetize your brand on an iconic luxury platform? Apply to become an official Playboy Creator directly through my referral link for fast-tracked approval and guidance.
-</p>
-<a href="#playboy-signup" class="glossy-btn">Apply Under My Link</a>
-</div>
-</section>
-<section class="design-section">
-<div class="design-inner">
-<div class="overlap-title">
-<div class="bg-bold">Design Studio</div>
-<span class="fg-script editorial-pink-glass-script">custom branding by bella</span>
-</div>
-<p class="design-intro">
-Love the look of this site? I build cohesive, high-converting digital branding for models, creators, and beauty businesses.
-</p>
-<div class="services-grid">
-<div class="service-box">
-<div>
-<svg class="service-num-svg" viewBox="0 0 70 46">
-<text x="35" y="36" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="38" fill="url(#pinkGlassFill)" stroke="#B5658F" stroke-width="0.5" filter="url(#crispBevel)">01</text>
-</svg>
-<div class="service-name">Custom Websites</div>
-</div>
-<p class="service-detail">Bespoke personal hubs & link sites just like this one, tailored to your aesthetic.</p>
-</div>
-<div class="service-box">
-<div>
-<svg class="service-num-svg" viewBox="0 0 70 46">
-<text x="35" y="36" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="38" fill="url(#pinkGlassFill)" stroke="#B5658F" stroke-width="0.5" filter="url(#crispBevel)">02</text>
-</svg>
-<div class="service-name">Telegram Emojis</div>
-</div>
-<p class="service-detail">Custom-designed glossy & animated emoji packs made specifically for your brand.</p>
-</div>
-<div class="service-box">
-<div>
-<svg class="service-num-svg" viewBox="0 0 70 46">
-<text x="35" y="36" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="38" fill="url(#pinkGlassFill)" stroke="#B5658F" stroke-width="0.5" filter="url(#crispBevel)">03</text>
-</svg>
-<div class="service-name">Telegram Setups</div>
-</div>
-<p class="service-detail">Complete VIP group & channel architecture, bots, welcome menus, and permissions.</p>
-</div>
-<div class="service-box">
-<div>
-<svg class="service-num-svg" viewBox="0 0 70 46">
-<text x="35" y="36" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="38" fill="url(#pinkGlassFill)" stroke="#B5658F" stroke-width="0.5" filter="url(#crispBevel)">04</text>
-</svg>
-<div class="service-name">Brand Identity</div>
-</div>
-<p class="service-detail">Logo suites, submarks, banners, flyers, and cohesive color & typography kits.</p>
-</div>
-</div>
-<a href="#design-portfolio" class="portfolio-cta">View Design Portfolio & Book</a>
-</div>
-</section>
-<section class="gallery-section">
-<div class="overlap-title">
-<div class="bg-bold">The Lookbook</div>
-<span class="fg-script editorial-pink-glass-script">featured photos</span>
-</div>
-<div class="gallery-grid">
-<div class="gallery-item"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1800&q=95" alt="Lookbook 1"></div>
-<div class="gallery-item"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1800&q=95" alt="Lookbook 2"></div>
-<div class="gallery-item"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1800&q=95" alt="Lookbook 3"></div>
-<div class="gallery-item"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=95" alt="Lookbook 4"></div>
-</div>
-</section>
-<footer>
-© 2026 Bella Berratta • All Rights Reserved
-</footer>
+
+  <!-- 1. TOP BAR & CLEAN SINGLE NAVIGATION -->
+  <div class="announcement-bar">
+    Welcome to the Official World of Bella Berratta
+  </div>
+
+  <nav class="nav-strip">
+    <a href="#socials">Socials</a>
+    <a href="#about">About Me</a>
+    <a href="#studio">Design Studio</a>
+    <a href="#playboy">Playboy Sign-Up</a>
+    <a href="#lookbook">Lookbook</a>
+  </nav>
+
+  <!-- 2. ANGEL FACED LOGO SUITE HEADER (Reference 1) -->
+  <header class="logo-banner">
+    <div class="submark-oval">
+      <div class="halo-ring"></div>
+      <span class="pink-3d-script" style="font-size: 2.1rem; padding: 0;">B</span>
+    </div>
+    <span class="brand-main-script pink-3d-script">Bella Berratta</span>
+    <span class="brand-main-serif">The Official Hub</span>
+    <p class="brand-tagline">Glamour &bull; Exclusives &bull; Custom Branding</p>
+  </header>
+
+  <!-- 3. EDITORIAL HERO (Reference 2 "soft lash essentials" Cursive Over Bold Pink) -->
+  <section class="hero-section">
+    <div class="ref2-lockup">
+      <span class="script-top pink-3d-script">soft luxury</span>
+      <span class="bold-bottom ref2-bold-pink">essentials</span>
+    </div>
+    <p class="hero-desc">
+      Curated glamour, exclusive channels, Playboy creator onboarding, and custom digital branding—all in one intentional space.
+    </p>
+    <a href="#socials" class="icy-gold-btn">Connect With Bella</a>
+
+    <div class="hero-photo-frame">
+      <div class="hero-photo-inner">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=90" alt="" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 3-ACROSS SQUARE GRADIENT TILES (Reference 2 "liquids | tweezers | trays") -->
+  <section id="socials" class="tiles-section">
+    <div class="tiles-grid">
+      <a href="#telegram-channel" class="square-tile">
+        <span class="square-tile-title">telegram<br>channel</span>
+        <span class="square-tile-btn">Join VIP</span>
+      </a>
+      <a href="#direct-message" class="square-tile">
+        <span class="square-tile-title">message<br>me direct</span>
+        <span class="square-tile-btn">I'm Online</span>
+      </a>
+      <a href="#reviews" class="square-tile">
+        <span class="square-tile-title">reviews<br>&amp; vouches</span>
+        <span class="square-tile-btn">View Proof</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. 4-ACROSS SOCIAL MEDALLIONS (Reference 15 3D Pink Glass Letters) -->
+  <section class="circles-bar">
+    <div class="circles-grid">
+      <a href="#instagram" class="circle-link">
+        <div class="circle-disc"><span class="circle-letters pink-3d-serif">IG</span></div>
+        <span class="circle-name">Instagram</span>
+      </a>
+      <a href="#telegram" class="circle-link">
+        <div class="circle-disc"><span class="circle-letters pink-3d-serif">TG</span></div>
+        <span class="circle-name">Telegram</span>
+      </a>
+      <a href="#tiktok" class="circle-link">
+        <div class="circle-disc"><span class="circle-letters pink-3d-serif">TT</span></div>
+        <span class="circle-name">TikTok</span>
+      </a>
+      <a href="#vip" class="circle-link">
+        <div class="circle-disc"><span class="circle-letters pink-3d-serif" style="font-size: 1.25rem;">VIP</span></div>
+        <span class="circle-name">Exclusives</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. ABOUT MYSELF (Reference 16 "Timeless Editorial" Tall Serif + Overlapping Cursive) -->
+  <section id="about" class="about-box-wrap">
+    <div class="about-card">
+      <div class="timeless-header">
+        <span class="timeless-serif-top pink-3d-serif">Timeless</span>
+        <span class="timeless-script-bottom pink-3d-script">Bella Berratta</span>
+      </div>
+      <p class="about-copy">
+        I’m Bella Berratta—curating soft luxury, high-glam aesthetics, and undeniable main-character energy. Whether you’re here to keep up with my daily life on socials, apply to join Playboy under my wing, or book custom digital branding &amp; website design, everything you need is right here.
+      </p>
+      <span class="pink-3d-script" style="font-size: 2.3rem;">xo, Bella</span>
+    </div>
+  </section>
+
+  <!-- 7. CUSTOM BRANDING & DESIGN PORTFOLIO PODIUMS (Reference 3 + Reference 14 Numbers) -->
+  <section id="studio" class="studio-wrap">
+    <div class="timeless-header">
+      <span class="timeless-serif-top pink-3d-serif">Design Studio</span>
+      <span class="timeless-script-bottom pink-3d-script">custom branding</span>
+    </div>
+
+    <div class="podium-2x2">
+      <div class="podium-item">
+        <div>
+          <div class="podium-tag">Bespoke Builds</div>
+          <div class="podium-title">Websites</div>
+        </div>
+        <div class="podium-display">
+          <span class="podium-number pink-3d-serif">01</span>
+          <div class="podium-base"></div>
+        </div>
+        <p class="podium-text">Cohesive personal hubs &amp; luxury link sites just like this one.</p>
+        <a href="#websites" class="square-tile-btn">See Examples</a>
+      </div>
+
+      <div class="podium-item">
+        <div>
+          <div class="podium-tag">Custom Packs</div>
+          <div class="podium-title">TG Emojis</div>
+        </div>
+        <div class="podium-display">
+          <span class="podium-number pink-3d-serif">02</span>
+          <div class="podium-base"></div>
+        </div>
+        <p class="podium-text">3D glossy &amp; animated Telegram emoji packs for your brand.</p>
+        <a href="#emojis" class="square-tile-btn">See Examples</a>
+      </div>
+
+      <div class="podium-item">
+        <div>
+          <div class="podium-tag">VIP Channels</div>
+          <div class="podium-title">TG Setups</div>
+        </div>
+        <div class="podium-display">
+          <span class="podium-number pink-3d-serif">03</span>
+          <div class="podium-base"></div>
+        </div>
+        <p class="podium-text">Complete group &amp; channel setups, bots, and welcome menus.</p>
+        <a href="#setups" class="square-tile-btn">See Examples</a>
+      </div>
+
+      <div class="podium-item">
+        <div>
+          <div class="podium-tag">Full Kits</div>
+          <div class="podium-title">Branding</div>
+        </div>
+        <div class="podium-display">
+          <span class="podium-number pink-3d-serif">04</span>
+          <div class="podium-base"></div>
+        </div>
+        <p class="podium-text">Logo suites, submarks, flyers, and signature color systems.</p>
+        <a href="#branding" class="square-tile-btn">See Examples</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <a href="#portfolio" class="icy-gold-btn">View Design Portfolio &amp; Book</a>
+    </div>
+  </section>
+
+  <!-- 8. PLAYBOY SIGN-UP (Reference 2 "products too good to gatekeep" Lockup) -->
+  <section id="playboy" class="playboy-wrap">
+    <div class="playboy-panel">
+      <div class="ref2-lockup">
+        <span class="bold-bottom ref2-bold-pink" style="font-size: clamp(2rem, 7.5vw, 3rem);">playboy club</span>
+        <span class="script-top pink-3d-script" style="font-size: clamp(2.2rem, 8vw, 3.2rem); margin-top: -14px; margin-bottom: 0;">apply under my link</span>
+      </div>
+      <p class="about-copy">
+        Ready to monetize your brand on an iconic luxury platform? Models can apply directly through my official Playboy referral link for fast-tracked onboarding and guidance.
+      </p>
+      <a href="#playboy-apply" class="icy-gold-btn">Join Playboy Under Bella</a>
+    </div>
+  </section>
+
+  <!-- 9. LOOKBOOK PHOTO GALLERY -->
+  <section id="lookbook" class="lookbook-wrap">
+    <div class="timeless-header">
+      <span class="timeless-serif-top pink-3d-serif">Lookbook</span>
+      <span class="timeless-script-bottom pink-3d-script">featured photos</span>
+    </div>
+    <div class="lookbook-2x2">
+      <div class="lookbook-card"><div class="lookbook-card-inner"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=90" alt="" onerror="this.style.display='none'" /></div></div>
+      <div class="lookbook-card"><div class="lookbook-card-inner"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=90" alt="" onerror="this.style.display='none'" /></div></div>
+      <div class="lookbook-card"><div class="lookbook-card-inner"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1400&q=90" alt="" onerror="this.style.display='none'" /></div></div>
+      <div class="lookbook-card"><div class="lookbook-card-inner"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=90" alt="" onerror="this.style.display='none'" /></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="pink-3d-script" style="font-size: 2.2rem;">Bella Berratta</span>
+    <p class="footer-copy">&copy; 2026 Bella Berratta &bull; All Rights Reserved</p>
+  </footer>
+
 </body>
 </html>
+"""
+
+with open("index-v6.html", "w", encoding="utf-8") as f:
+    f.write(html_v6)
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_v6)
+
+print("Saved index-v6.html and index.html")
